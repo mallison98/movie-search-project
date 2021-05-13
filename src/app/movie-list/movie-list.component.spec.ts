@@ -16,12 +16,6 @@ describe('MovieListComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'movie-search'`, () => {
-    const fixture = TestBed.createComponent(MovieListComponent);
-    const app = fixture.componentInstance;
-    expect(app.title).toEqual('movie-search');
-  });
-
   it('should render title', () => {
     const fixture = TestBed.createComponent(MovieListComponent);
     fixture.detectChanges();

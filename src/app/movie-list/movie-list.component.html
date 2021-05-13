@@ -1,0 +1,22 @@
+<h2>Movie List</h2>
+
+<!-- Display list if movies are returned -->
+<div *ngIf="movies.length">
+  <table class="movie">
+    <tr class="mov-h">
+      <th>Name</th>
+      <th>Id</th>
+    </tr>
+    <tr appCoverDisplay *ngFor="let movie of movies" appCoverDisplay>
+      <td class="mov">{{movie.title}}</td>
+      <td>{{movie.id}}</td>
+    </tr>
+  </table>
+</div>
+
+<img src="https://image.tmdb.org/t/p/original/wwemzKWzjKYJFfCeiB57q3r4Bcm.png">
+
+<!-- If no movies returned, show this message -->
+<div *ngIf="!movies.length">
+  <span>No movies found.</span>
+</div>

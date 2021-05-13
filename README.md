@@ -29,6 +29,13 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 ## To Do:
 - Deal with unit tests (.spec.ts files)
 - Deal with e2e tests (e2e folder)
-- Error handling with API call(s)
+- improve pagination on search result list (like, display total pages in a nice way)
+- display more movie details in table
+    - hover over to see cover? cover can be displayed in a static place
+- reorganize models so they aren't all in one folder
 - styling
+- add a loading spinner?
+- change favicon
+- commenting
+- use angular material?
 

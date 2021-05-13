@@ -3,6 +3,8 @@ import { MovieResult } from './movie-result';
 import { SearchBody } from './search-body';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
+import { catchError } from 'rxjs/operators';
+import { ErrorBody } from './error-body';
 
 @Injectable({
   providedIn: 'root'
@@ -56,7 +58,19 @@ export class MovieService {
     return of(this.mockData);
   }
 
-  searchMovie(term: string): Observable<SearchBody> {
-    return this.http.get<SearchBody>(`${this.tmdbUrl}/search/movie?api_key=${this.apiKey}&language=en-US&query=${term}&page=1&include_adult=false`);
+  /**
+   * 
+   * @param term 
+   * @param page 
+   * @returns result from movie search
+   */
+  searchMovie(term: string, page: number): Observable<SearchBody|ErrorBody> {
+    const searchUrl = `${this.tmdbUrl}/search/movie?api_key=${this.apiKey}&language=en-US&query=${term}&page=${page}&include_adult=false`;
+    return this.http.get<SearchBody|ErrorBody>(searchUrl).pipe(
+      catchError(error => {
+        console.error(error);
+        return of(error);
+      })
+    );
   }
 }

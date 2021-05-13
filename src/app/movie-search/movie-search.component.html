@@ -1,0 +1,23 @@
+<div>
+    <input #searchInput (keyup)="searchTerm=searchInput.value" (keyup.enter)="search(searchTerm)">
+    <button (click)="search(searchInput.value)">Search</button>
+    <span>spinspinspin</span>
+</div>
+
+<!-- If search hasn't been made yet -->
+<div *ngIf="!searched">
+    <span>Type in the search bar to search for a movie.</span>
+</div>
+
+<!-- If search gives error -->
+<div *ngIf="errorInfo">
+    <span>Error: {{errorInfo.error.status_message}}</span>
+</div>
+
+<app-movie-list *ngIf="searched && !errorInfo" [movies]="movies"></app-movie-list>
+
+<div>
+    <button (click)="goToPage(currentPage-1)">prev</button>
+    <span>{{currentPage}}</span>
+    <button (click)="goToPage(currentPage+1)">next</button>
+</div>
