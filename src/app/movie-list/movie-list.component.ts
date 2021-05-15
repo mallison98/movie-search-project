@@ -8,9 +8,15 @@ import { MovieResult } from '../movie-result';
 })
 export class MovieListComponent implements OnInit {
   @Input() movies: MovieResult[] = [];
+  showCover = false;
+  coverPath = null;
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  setCoverPath(path: string):void {
+    this.coverPath = path;
   }
 }

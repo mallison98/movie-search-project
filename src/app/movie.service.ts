@@ -11,11 +11,16 @@ import { ErrorBody } from './error-body';
 })
 export class MovieService {
 
+  // move into a config file or something
   apiKey = '673029ca2cd98f9d090afb14e40156b7';
   tmdbUrl = 'https://api.themoviedb.org/3';
 
   // Remove later
-  mockData: MovieResult[] = [
+  mockData: SearchBody = {
+    page: 1,
+    total_pages: 1,
+    total_results: 2,
+    results: [
     {
       poster_path: null,
       adult: false,
@@ -48,13 +53,13 @@ export class MovieService {
       video: false,
       vote_average: 1
     }
-  ];
+  ]};
 
   constructor(
     private http: HttpClient
   ) { }
 
-  searchMovieMock(): Observable<MovieResult[]> {
+  searchMovieMock(term: string, page: number): Observable<SearchBody> {
     return of(this.mockData);
   }
 

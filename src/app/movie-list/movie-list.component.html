@@ -1,22 +1,25 @@
-<h2>Movie List</h2>
+<div id="comp">
+  <!-- Display list if movies are returned -->
+  <div id="list">
+    <table class="movie">
+      <tr id="mov-h">
+        <th class="cover">Cover</th>
+        <th class="title">Title</th>
+        <th class="title">Release Date</th>
+        <th class="overview">Overview</th>
+      </tr>
+      <tr *ngFor="let movie of movies">
+        <td class="cover">
+          <img (mouseenter)="setCoverPath(movie.poster_path)" (mouseleave)="setCoverPath(null)" class="img-prev" src="https://image.tmdb.org/t/p/w500/{{movie.poster_path}}">
+        </td>
+        <td class="title">{{movie.title}}</td>
+        <td class="release-date">{{movie.release_date}}</td>
+        <td class="overview">{{movie.overview}}</td>
+      </tr>
+    </table>
+  </div>
 
-<!-- Display list if movies are returned -->
-<div *ngIf="movies.length">
-  <table class="movie">
-    <tr class="mov-h">
-      <th>Name</th>
-      <th>Id</th>
-    </tr>
-    <tr appCoverDisplay *ngFor="let movie of movies" appCoverDisplay>
-      <td class="mov">{{movie.title}}</td>
-      <td>{{movie.id}}</td>
-    </tr>
-  </table>
-</div>
-
-<img src="https://image.tmdb.org/t/p/original/wwemzKWzjKYJFfCeiB57q3r4Bcm.png">
-
-<!-- If no movies returned, show this message -->
-<div *ngIf="!movies.length">
-  <span>No movies found.</span>
+  <div id="cover-display">
+    <app-cover-display [imgPath]="coverPath"></app-cover-display>
+  </div>
 </div>

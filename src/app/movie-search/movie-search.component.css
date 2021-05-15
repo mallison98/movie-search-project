@@ -1,0 +1,101 @@
+#search-div {
+  margin-left: auto;
+  margin-right: auto;
+  position: fixed;
+  background-color: whitesmoke;
+  padding: 20px;
+  width: 1000px;
+  position: relative;
+  border-left: 4px solid var(--fill);
+  border-right: 4px solid var(--fill);
+  border-bottom: 4px solid var(--fill);
+}
+
+#search-bar {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+h1 {
+  padding-top: 10px;
+  padding-left: 10px;
+}
+
+#input-div {
+  flex-basis: 100%;
+  margin-right: 30px;
+}
+
+#paginator {
+  flex-shrink: 0;
+  flex-basis: 15%;
+  width: 50%;
+  margin-left: 30px;
+  margin-right: 0px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+#c-page {
+  margin: 10px;
+  white-space: nowrap;
+}
+
+button {
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  color: var(--font);
+  font-size: 16px;
+  background-color: var(--fill);
+  border: none;
+  transition-duration: 0.4s;
+  font-weight: bold;
+  height: 50px;
+  background-color: Transparent;
+  outline: none;
+}
+
+#search-input {
+  background-color: var(--fill);
+  width: 100%;
+  height: 50px;
+  padding-left: 20px;
+  border: none;
+  border-bottom: 2px solid var(--accentSub);
+  transition-duration: 0.4s;
+  font-size: 20px;
+  color: var(--font);
+  outline: none;
+}
+
+#search-input:hover {
+  background-color: var(--accentSub);
+  color: var(--lightFont);
+}
+
+h1 {
+  margin-left: auto;
+}
+
+.notif, .notif-sub, .notif-load {
+  margin: 20px;
+  padding: 20px;
+  border-left: 6px solid var(--accent);
+  background-color: var(--lightAccent);
+  width: 40%;
+}
+
+.notif-sub {
+  border-color: var(--accentSub);
+  background-color: var(--lightAccentSub);
+}
+
+.notif-load {
+  border-color: var(--accentSub);
+  background-color: var(--fill);
+}

@@ -29,13 +29,20 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 ## To Do:
 - Deal with unit tests (.spec.ts files)
 - Deal with e2e tests (e2e folder)
-- improve pagination on search result list (like, display total pages in a nice way)
-- display more movie details in table
-    - hover over to see cover? cover can be displayed in a static place
+- another page for lots of details?
 - reorganize models so they aren't all in one folder
-- styling
-- add a loading spinner?
-- change favicon
 - commenting
 - use angular material?
+- trim and get rid of special characters in search input -> regex
+- make nav bar into a routing module?
 
+Stuff to add to the readme:
+
+## What is this?
+This app allows you to search movies using [The Movie Database API](https://developers.themoviedb.org/3/getting-started/introduction). There are basically two versions of the app, accessible from the landing page: one that uses Angular Material for its components and one that doesn't. I wanted to try out Angular Material but I also wanted to work with no premade components.
+
+## How do I run it?
+1. Install Node.js
+2. `npm install -g @angular/cli` to install the Angular CLI if you don't already have it.
+3. `npm i` on the repo to install dependencies.
+4. `ng serve -o` to host the app; it'll open a new tab in your browser to `http://localhost:4200/`.
