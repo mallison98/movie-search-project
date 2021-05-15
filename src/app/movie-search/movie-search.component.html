@@ -1,6 +1,4 @@
-<app-nav-bar></app-nav-bar>
-
-<div id="search-div">
+<div class="container-div">
     <h1>Movie Search</h1>
     <div id="search-bar">
         <div id="input-div">
@@ -13,25 +11,25 @@
         </div>
     </div>
 
-    <!-- If search hasn't been made yet -->
+    <!-- If search hasn't come back yet -->
     <div class="notif-load" *ngIf="loading">
         <span>Loading...</span>
     </div>
 
     <!-- If search hasn't been made yet -->
-    <div class="notif-sub" *ngIf="!searched && !loading">
+    <div class="notif-sub" *ngIf="!searched && !loading && !errorMessage">
         <span>Type in the search bar to search for a movie.</span>
     </div>
 
     <!-- If search gives error -->
-    <div class="notif" *ngIf="errorInfo">
-        <span>Error: {{errorInfo.error.status_message}}</span>
+    <div class="notif" *ngIf="errorMessage">
+        <span>Error: {{errorMessage}}</span>
     </div>
 
     <!-- If no movies returned, show this message -->
-    <div class="notif" *ngIf="!movies.length && searched && !errorInfo">
+    <div class="notif" *ngIf="!movies.length && searched && !errorMessage">
         <span>No movies found.</span>
     </div>
 
-    <app-movie-list *ngIf="searched && !errorInfo && movies.length" [movies]="movies"></app-movie-list>
+    <app-movie-list *ngIf="searched && !errorMessage && movies.length" [movies]="movies"></app-movie-list>
 </div>

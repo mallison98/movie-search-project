@@ -1,0 +1,62 @@
+<div class="container-div">
+    <!-- If get request gives error -->
+    <div class="notif" *ngIf="errorMessage">
+        <span>Error: {{errorMessage}}</span>
+    </div>
+    <!-- If get hasn't come back yet -->
+    <div class="notif-load" *ngIf="loading">
+        <span>Loading...</span>
+    </div>
+</div>
+<div class="container-div" *ngIf="!errorMessage && !loading">
+    <h1>{{movie.title}}</h1>
+    <div id="main-info">
+        <img class="img-full" src="https://image.tmdb.org/t/p/original{{movie.poster_path}}">
+        <div>
+            <table>
+                <tr>
+                    <th>Original Title</th>
+                    <td class="data">{{getField(movie.original_title)}}</td>
+                </tr>
+                <tr>
+                    <th>Original Language</th>
+                    <td class="data">{{getField(movie.original_language)}}</td>
+                </tr>
+                <tr>
+                    <th>Status</th>
+                    <td class="data">{{getField(movie.status)}}</td>
+                </tr>
+                <tr>
+                    <th>Release Date</th>
+                    <td class="data">{{getField(movie.release_date)}}</td>
+                </tr>
+                <tr>
+                    <th>Homepage</th>
+                    <td *ngIf="movie.homepage" class="data">
+                        <a href="{{movie.homepage}}">
+                            Link
+                        </a>
+                    </td>
+                    <td *ngIf="!movie.homepage">-</td>
+                </tr>
+                <tr>
+                    <th>Budget</th>
+                    <td class="data">{{getField(movie.budget)}}</td>
+                </tr>
+                <tr>
+                    <th>Tagline</th>
+                    <td class="data">{{getField(movie.tagline)}}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div id="overview">
+        <h2>Overview</h2>
+        <p>
+            {{movie.overview}}
+        </p>
+    </div>
+    <div *ngIf="movie.backdrop_path" id="backdrop">
+        <img src="https://image.tmdb.org/t/p/original{{movie.backdrop_path}}">
+    </div>
+</div>

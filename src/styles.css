@@ -1,21 +1,79 @@
 /* You can add global styles to this file, and also import other style files */
 
 :root {
-    --fill: #BFBEE0;
-    --accentSub: #6E6BC6;
-    --accent: #AA6BC6;
-    --lightAccent: #DFBDEF;
-    --lightAccentSub: #D1D1FF;
-    --font: #686868;
-    --lightFont: white;
-    --borders: #C6C6C6;
+  --fill: #BFBEE0;
+  --accentSub: #6E6BC6;
+  --accent: #AA6BC6;
+  --lightAccent: #DFBDEF;
+  --lightAccentSub: #D1D1FF;
+  --font: #686868;
+  --lightFont: white;
+  --borders: #C6C6C6;
 }
 
 html, body { height: 100%; }
 body { 
-    margin: 0px;
-    font-family: Roboto, "Helvetica Neue", sans-serif;
-    background-color: var(--font);
-    color: var(--font);
-    height: 100%;
+  margin: 0px;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-color: var(--borders);
+  color: var(--font);
+  height: 100%;
+  background-image: url('assets/background-image.png');
+  background-position: right bottom;
+  background-repeat: repeat-x;
+  background-attachment: fixed;
+}
+
+.container-div {
+  margin-left: auto;
+  margin-right: auto;
+  position: fixed;
+  background-color: whitesmoke;
+  padding: 20px;
+  width: 1000px;
+  position: relative;
+  border-left: 4px solid var(--fill);
+  border-right: 4px solid var(--fill);
+  border-bottom: 4px solid var(--fill);
+}
+
+h1, h2 {
+  padding-top: 10px;
+  padding-left: 10px;
+}
+
+.img-full {
+  max-width: 500px;
+  max-height: 500px;
+  margin: auto;
+  border: 1px solid var(--borders);
+}
+
+.notif, .notif-sub, .notif-load {
+  margin: 20px;
+  padding: 20px;
+  border-left: 6px solid var(--accent);
+  background-color: var(--lightAccent);
+  width: 40%;
+}
+
+.notif-sub {
+  border-color: var(--accentSub);
+  background-color: var(--lightAccentSub);
+}
+
+.notif-load {
+  border-color: var(--accentSub);
+  background-color: var(--fill);
+}
+
+button {
+  font-size: 16px;
+  outline: none;
+  text-decoration: none;
+  background-color: Transparent;
+  border: none;
+  padding: 5px 10px;
+  font-weight: bold;
+  transition-duration: 0.4s;
 }

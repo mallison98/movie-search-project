@@ -1,7 +1,6 @@
 #list {
   width: 100%;
   margin-top: 20px;
-  background-color: #EDEDFF;
 }
 
 #cover-display {
@@ -33,7 +32,6 @@ td {
 }
 
 table, th, td {
-  border: 1px solid var(--borders);
   padding: 10px;
   font-weight: normal;
 }
@@ -44,12 +42,17 @@ table {
   table-layout: fixed;
 }
 
-.cover {
-  border: none;
+tr {
+  padding-top: 10px;
+  border-top: 1px solid var(--borders);
 }
 
-.title, .release-date {
+.title, .release-date, .cover {
   text-align: center;
+}
+
+.title-link, .img-prev {
+  cursor: pointer;
 }
 
 .overview {

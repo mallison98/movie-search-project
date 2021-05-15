@@ -10,16 +10,20 @@
       </tr>
       <tr *ngFor="let movie of movies">
         <td class="cover">
-          <img (mouseenter)="setCoverPath(movie.poster_path)" (mouseleave)="setCoverPath(null)" class="img-prev" src="https://image.tmdb.org/t/p/w500/{{movie.poster_path}}">
+          <img (mouseenter)="setCoverPath(movie.poster_path)" (mouseleave)="setCoverPath(null)" [routerLink]="['/movie-info', movie.id]" class="img-prev" src="https://image.tmdb.org/t/p/w500{{movie.poster_path}}">
         </td>
-        <td class="title">{{movie.title}}</td>
+        <td class="title">
+          <span [routerLink]="['/movie-info', movie.id]" class="title-link">{{movie.title}}</span></td>
         <td class="release-date">{{movie.release_date}}</td>
         <td class="overview">{{movie.overview}}</td>
       </tr>
     </table>
   </div>
 
+  <!-- Cover hover display -->
   <div id="cover-display">
-    <app-cover-display [imgPath]="coverPath"></app-cover-display>
+    <div *ngIf="coverPath">
+      <img class="img-full" src="https://image.tmdb.org/t/p/original{{coverPath}}">
+    </div>
   </div>
 </div>

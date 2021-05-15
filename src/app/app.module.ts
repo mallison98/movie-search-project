@@ -4,24 +4,24 @@ import { HttpClientModule } from '@angular/common/http';
 import { MovieListComponent } from './movie-list/movie-list.component';
 import { MovieSearchComponent } from './movie-search/movie-search.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { CoverDisplayComponent } from './cover-display/cover-display.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
-import { MatSearchComponent } from './mat-search/mat-search.component';
+import { RoutingModule } from './routing/routing.module';
+import { MovieInfoComponent } from './movie-info/movie-info.component'
 
 @NgModule({
   declarations: [
     MovieListComponent,
     MovieSearchComponent,
-    CoverDisplayComponent,
     NavBarComponent,
-    MatSearchComponent
+    MovieInfoComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    RoutingModule
   ],
   providers: [],
-  bootstrap: [MovieSearchComponent]
+  bootstrap: [NavBarComponent]
 })
 export class AppModule { }
