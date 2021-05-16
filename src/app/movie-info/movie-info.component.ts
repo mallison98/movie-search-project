@@ -32,7 +32,7 @@ export class MovieInfoComponent implements OnInit {
   private getMovieInfo(): void {
     this.loading = true;
     this.movieService.getMovie(this.movieId).subscribe((getResult: any) => {
-      if(this.isError(getResult)) {
+      if(this.movieService.isError(getResult)) {
         // If there's an error, get the status message so it can be displayed
         this.errorMessage = getResult.error.status_message;
       } else {
@@ -58,14 +58,4 @@ export class MovieInfoComponent implements OnInit {
       return field.toString();
     }
   }
-
-  /**
-   * Returns true if the message is an error, and returns false if it is not.
-   * @param message 
-   * @returns boolean
-   */
-  private isError(message: any): boolean {
-    return 'error' in message;
-  }
-
 }

@@ -1,4 +1,4 @@
-<div class="container-div">
+<div *ngIf="errorMessage || loading" class="container-div">
     <!-- If get request gives error -->
     <div class="notif" *ngIf="errorMessage">
         <span>Error: {{errorMessage}}</span>

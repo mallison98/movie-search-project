@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { MovieResult } from '../models/movie-result';
-import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-movie-list',
@@ -13,7 +13,6 @@ export class MovieListComponent implements OnInit {
   coverPath = null;
 
   constructor(
-    private route: ActivatedRoute,
     private router: Router
   ) { }
 

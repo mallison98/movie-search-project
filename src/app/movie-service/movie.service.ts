@@ -18,7 +18,7 @@ export class MovieService {
   ) { }
 
   /**
-   * 
+   * Searches for movie given the search term and the page of results to get.
    * @param term 
    * @param page 
    * @returns result from movie search
@@ -34,6 +34,11 @@ export class MovieService {
     );
   }
 
+  /**
+   * Gets movie info given the movie id.
+   * @param movieId 
+   * @returns result from getting the movie
+   */
   getMovie(movieId: number): Observable<GetBody|ErrorBody> {
     const searchUrl = `${this.tmdbUrl}/movie/${movieId}?api_key=${this.apiKey}&language=en-US`;
     return this.http.get<GetBody|ErrorBody>(searchUrl).pipe(
@@ -42,5 +47,14 @@ export class MovieService {
         return of(error);
       })
     );
+  }
+
+  /**
+   * Returns true if the message is an error, and returns false if it is not.
+   * @param message 
+   * @returns boolean
+   */
+  isError(message: any): boolean {
+    return 'error' in message;
   }
 }
